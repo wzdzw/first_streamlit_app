@@ -1,14 +1,21 @@
 
 """
 # My first app
-Here's our first attempt at using data to create a table:
+ESS-DABW course learning:
 """
 
 import streamlit as st
 import pandas as pd
-df = pd.DataFrame({
-  'first column': [1, 2, 3, 4],
-  'second column': [10, 20, 30, 40]
-})
+#df = pd.DataFrame({
+ # 'first column': [1, 2, 3, 4],
+  #'second column': [10, 20, 30, 40]
+#})
 
-df
+#df
+
+st.title('My parents new healthy diner')
+
+st.header('Breakfast Menu')
+st.text('Omega 3 & BlueberryOatmeal')
+st.text('Kale, Spinach & Rocket Smoothie')
+st.text('Hard-boiled free range egg')
