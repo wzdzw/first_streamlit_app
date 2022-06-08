@@ -15,7 +15,10 @@ import pandas as pd
 
 st.title('My parents new healthy diner')
 
-st.header('Breakfast Menu')
-st.text('Omega 3 & BlueberryOatmeal')
-st.text('Kale, Spinach & Rocket Smoothie')
-st.text('Hard-boiled free range egg')
+st.header('Breakfast Favorites')
+st.text('🥣 Omega 3 & BlueberryOatmeal')
+st.text('🥗 Kale, Spinach & Rocket Smoothie')
+st.text('🐔 Hard-boiled free range egg')
+st.text('🥑🍞 Avocado Toast')
+
+streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
