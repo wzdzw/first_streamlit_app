@@ -51,5 +51,7 @@ st.header("The fruit load list contains:")
 st.dataframe(my_data_rows)
 
 # allow user to add fruit to the list
-fruit_new = st.text_input('what fruit would like to add?')
+fruit_new = st.text_input('what fruit would like to add?','Jackfruit')
 st.write('Thanks for adding ', fruit_new)
+
+my_cur.execute("Insert into fruit_load_list values('from_streamlit')")
