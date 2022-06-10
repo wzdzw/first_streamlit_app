@@ -35,6 +35,9 @@ st.dataframe(fruit_to_show)
 
 # new section to display fruitvice API response
 st.header('Fruityvice fruit advice!')
-fruityvice_response = rqt.get("https://fruityvice.com/api/fruit/watermelon")
+fruit_choice = st.text_input('what fruit would like information about?','kiwi')
+st.write('user entered: ', fruit_choice)
+
+fruityvice_response = rqt.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 st.dataframe(fruityvice_normalized)
