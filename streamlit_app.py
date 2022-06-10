@@ -66,7 +66,7 @@ if st.button("Get Fruit Load List"):
 def insert_row(new_fruit):
   with my_cnx.cursor() as my_cur:
     my_cur.execute("Insert into fruit_load_list values(new_fruit)")
-    retrun "Thanks for adding " + new_fruit
+    return "Thanks for adding " + new_fruit
 
 add_my_fruit = st.text_input('what fruit would like to add?')
 if st.button('Add a Fruit to the list'):
