@@ -6,6 +6,7 @@ ESS-DABW course learning:
 
 import streamlit as st
 import pandas as pd
+import requests as rqt
 #df = pd.DataFrame({
  # 'first column': [1, 2, 3, 4],
   #'second column': [10, 20, 30, 40]
@@ -33,7 +34,7 @@ fruit_to_show = my_fruit_list.loc[fruits_selected]
 st.dataframe(fruit_to_show)
 
 # new section to display fruitvice API response
-import requests
 st.header('Fruityvice fruit advice!')
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response.json())
+fruityvice_response = rqt.get("https://fruityvice.com/api/fruit/watermelon")
+fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+st.data_frame(fruityvice_normalized)
