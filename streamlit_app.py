@@ -41,3 +41,5 @@ st.write('user entered: ', fruit_choice)
 fruityvice_response = rqt.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 st.dataframe(fruityvice_normalized)
+
+import snowflake.connector
