@@ -29,6 +29,11 @@ fruit_to_show = my_fruit_list.loc[fruits_selected]
 # display fruit table on the page
 st.dataframe(fruit_to_show)
 
+def get_fruityvice_data(this_fruit_response):
+  fruityvice_response = rqt.get("https://fruityvice.com/api/fruit/"+this_fruit_choice)
+  fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+  return fruityvice_normalized
+
 # new section to display fruitvice API response
 st.header('Fruityvice fruit advice!')
 try:
@@ -36,9 +41,8 @@ try:
   if not fruit_choice:
     st.error("please select a fruit to get information.")
   else: 
-    fruityvice_response = rqt.get("https://fruityvice.com/api/fruit/"+fruit_choice)
-    fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
-    st.dataframe(fruityvice_normalized)
+    back_from_funciton = get_fruityvice_data(fruit_choice)
+    st.dataframe(back_from_funciton)
 except URLError as e:
   st.error()
 
