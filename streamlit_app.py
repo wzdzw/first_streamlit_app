@@ -8,7 +8,7 @@ import streamlit as st
 import pandas as pd
 import requests as rqt
 import snowflake.connector
-from urllib.error import urlerror 
+from urllib.error import URLError 
 
 st.title('My parents new healthy diner')
 
