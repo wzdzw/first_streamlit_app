@@ -29,7 +29,7 @@ fruit_to_show = my_fruit_list.loc[fruits_selected]
 # display fruit table on the page
 st.dataframe(fruit_to_show)
 
-def get_fruityvice_data(this_fruit_response):
+def get_fruityvice_data(this_fruit_choice):
   fruityvice_response = rqt.get("https://fruityvice.com/api/fruit/"+this_fruit_choice)
   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
   return fruityvice_normalized
