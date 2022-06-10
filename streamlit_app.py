@@ -7,12 +7,8 @@ ESS-DABW course learning:
 import streamlit as st
 import pandas as pd
 import requests as rqt
-#df = pd.DataFrame({
- # 'first column': [1, 2, 3, 4],
-  #'second column': [10, 20, 30, 40]
-#})
-
-#df
+import snowflake.connector
+from urllib.error import urlerror 
 
 st.title('My parents new healthy diner')
 
@@ -42,7 +38,9 @@ fruityvice_response = rqt.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 st.dataframe(fruityvice_normalized)
 
-import snowflake.connector
+# do not run anything past here
+st.stop()
+
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
